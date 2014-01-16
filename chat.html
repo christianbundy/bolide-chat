@@ -1,0 +1,29 @@
+<head>
+  <title>Chat</title>
+</head>
+
+<body>
+  {{> message_list }}
+  {{> hello}}
+</body>
+
+<template name="hello">
+  <form>
+    <input class="prompt" type="text" placeholder="what up yo">
+    <input class="send" type="button" value="Send" />
+  </form>
+</template>
+
+
+<template name="message_list">
+  {{#each messages}}
+    {{> message_info }}
+  {{else}}
+    No messages yet.
+  {{/each}}
+</template>
+
+<template name="message_info">
+  {{text}}
+  <br>
+</template>
