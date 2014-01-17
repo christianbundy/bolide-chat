@@ -19,7 +19,7 @@ if (Meteor.isClient) {
 if (Meteor.isServer) {
   Meteor.startup(function() {
     return Meteor.methods({
-      clearRoom: function() {
+      clearChat: function() {
         return Messages.remove({});
       }
     });
