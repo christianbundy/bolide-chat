@@ -2,12 +2,11 @@ Messages = new Meteor.Collection("messages");
 
 if (Meteor.isClient) {
   Template.message_list.messages = function (){
-    return Messages.find({});
+    return Messages.find();
   };
 
   Template.hello.events({
     'submit' : function (event, context) {
-      console.log('ayy')
       event.preventDefault();
       Messages.insert({ text: $('.prompt').val() })
       $('html, body').animate({scrollTop: $(document).height()});
